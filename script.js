@@ -25,8 +25,12 @@ if (!('webkitSpeechRecognition' in window)) {
   recognition.onend = function() {
     recognition.stop();
     if (transcript === answer){
+      var msg = new SpeechSynthesisUtterance('correct!');
+        window.speechSynthesis.speak(msg);
       alert('Right!');
     }else{
+      var msg = new SpeechSynthesisUtterance('wrong!');
+        window.speechSynthesis.speak(msg);
       alert('WRONG! -- GTFO!');
     }
   };

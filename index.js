@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 });
 
 // app.use("/styles", express.static(__dirname + '/styles'));
-// app.use("/scripts", express.static(__dirname + '/scripts'));
+ app.use("/script.js", express.static(__dirname + '/script.js'));
 
 
 // app.use("/mic-animate.gif", express.static(__dirname + '/mic-animate.gif'));

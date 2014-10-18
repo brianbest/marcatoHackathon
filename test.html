@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Drag and Drop</title>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+	
+
+</head>
+
+<body>
+
+	<div id="answerArea" style="height: 300px; width: 300px; background-color: gray">
+		<p></p>
+	</div>
+
+	<button type="button" onclick="pickQuestion()">Ask</button>
+
+	<div id="questionArea"></div>
+
+	<div class="answers"style="width: 30%; text-align: left; margin: 0 auto">
+		<style>
+		.answers div {width: 30%; display: inline-block; margin 0 auto; border: 2px solid black;}
+		</style>
+		<div id="answer1" class="answer"></div>
+		<div id="answer2" class"answer"></div>
+		<div id="answer3" class="answer"></div>
+
+	</div>
+
+	<script src="hammer.js" type="text/javascript"></script>
+</body>
+
+</html>

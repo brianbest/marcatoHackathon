@@ -20,7 +20,7 @@ if (!('webkitSpeechRecognition' in window)) {
   //recognition.onstart = function() { ... }
   recognition.onresult = function(event) {
     transcript = event.results[0][0].transcript;
-
+    document.getElementById('capText').html = transcript;
   };
   recognition.onend = function() {
     recognition.stop();

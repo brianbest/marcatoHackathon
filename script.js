@@ -47,6 +47,11 @@ function startButton(event) {
   recognition.start();
 }
 
+function playQuestion(){
+  var msg = new SpeechSynthesisUtterance('Hello World');
+    window.speechSynthesis.speak(msg);
+}
+
 function upgrade(){
   alert('Why do you hate me?');
 }

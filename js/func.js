@@ -84,47 +84,8 @@ function speechQuestion(q, a){
 
 //===================================================
 
-//Sub-Functions needed for speach
-//===================================================
-function startButton(event) {
-
-	final_transcript = '';
-	recognition.lang = "en-US";//select_dialect.value;
-	recognition.start();
-}
-
-function playQuestion(){
-	var msg = new SpeechSynthesisUtterance(question);
-		window.speechSynthesis.speak(msg);
-}
-
-function upgrade(){
-	alert('Why do you hate me?');
-}
-
-//===================================================
-
-
-
-
 //Jake's code
 //===================================================
-
-//function for creating question objects
-function question(question, right, wrong1, wrong2) {
-		this.question = question;
-		this.rightAnswer = right;
-		this.wrongAnswer1 = wrong1;
-		this.wrongAnswer2 = wrong2;
-}
-
-//function for picking a random question
-function pickQuestion(){
-	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
-	askQuestion(selectedQuestion);
-}
-
-
 function askQuestion() {
 	console.log("click works");
 	var question = document.createElement("P");
@@ -174,6 +135,44 @@ function askQuestion() {
 			}
 	});
 }
+//===================================================
+
+
+
+//Sub-Functions
+//===================================================
+function startButton(event) {
+
+	final_transcript = '';
+	recognition.lang = "en-US";//select_dialect.value;
+	recognition.start();
+}
+
+function playQuestion(){
+	var msg = new SpeechSynthesisUtterance(question);
+		window.speechSynthesis.speak(msg);
+}
+
+function upgrade(){
+	alert('Why do you hate me?');
+}
+
+
+//Jake
+//--------------------------------------------------
+//function for creating question objects
+function question(question, right, wrong1, wrong2) {
+		this.question = question;
+		this.rightAnswer = right;
+		this.wrongAnswer1 = wrong1;
+		this.wrongAnswer2 = wrong2;
+}
+
+//function for picking a random question
+function pickQuestion(){
+	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
+	askQuestion(selectedQuestion);
+}
 
 function shuffleArray(array) {
 		for (var i = array.length - 1; i > 0; i--) {
@@ -184,3 +183,7 @@ function shuffleArray(array) {
 		}
 		return array;
 }
+
+
+
+//===================================================

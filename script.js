@@ -3,6 +3,7 @@
 //===================================================
 var final_transcript ='';
 var transcript ='';
+var question = '1+1= ?';
 var answer = '2';
 
 //===================================================
@@ -48,7 +49,7 @@ function startButton(event) {
 }
 
 function playQuestion(){
-  var msg = new SpeechSynthesisUtterance('Hello World');
+  var msg = new SpeechSynthesisUtterance(question);
     window.speechSynthesis.speak(msg);
 }
 

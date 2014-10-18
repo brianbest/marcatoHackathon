@@ -30,7 +30,7 @@ function speechQuestion(q, a){
     recognition.continuous = false;
     recognition.onresult = function(event) {
       transcript = event.results[0][0].transcript;
-      document.getElementById('capText').html(transcript);
+      document.getElementById('capText').innerHTML = transcript;
     };
     recognition.onend = function() {
       recognition.stop();

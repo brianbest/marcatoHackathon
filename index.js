@@ -4,7 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/webspeechdemo.html');
+  res.sendFile(__dirname + '/proof.html');
 });
 
 // app.use("/styles", express.static(__dirname + '/styles'));

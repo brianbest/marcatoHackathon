@@ -14,12 +14,8 @@
 .questionbox{
 	height: 300px;
 	border: 3px solid black;
-	position: left;
-	float: left;
 }
 .answerbox{
 	height: 300px;
 	border: 3px dotted black;
-	position: right;
-	float: right;
 }

@@ -28,7 +28,7 @@ if (!('webkitSpeechRecognition' in window)) {
   };
   recognition.onerror = function(event) {
     var interim_transcript = event;
-    console.log("error: "interim_transcript);
+    console.log("error: " + interim_transcript);
   };
 }
 

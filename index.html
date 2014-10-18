@@ -6,8 +6,39 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
+
+  <!-- adding the menu bar --> 
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">__   *Quizzard*  __ </a>
+        <ul class="dropdown">
+          <li class="active"><a href="#">Profile</a></li>
+          <li class="active"><a href="#">Add a Quiz</a></li>
+          <li class="active"><a href="#">Be Quizzed</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
+</div>
+
   </head>
   <body>
+    <!--progress bar that isnt working just yet-->
+    <div class="large-4 medium-4 columns">
+    <div class="progress [small-#] [secondary alert success] [radius round]">
+      <span class="meter" style="width: [80 - 100]%"></span>
+    </div>
+    </div>
+  
     
     <div class="row">
       <div class="large-12 columns">
@@ -18,8 +49,9 @@
     <div class="row">
       <div class="large-12 columns">
       	<div class="panel">
-	        <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-	        <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
+	        <h3>Question: </h3>
+	        <br></br>
+          <br></br>
 	        <p>Once you've exhausted the fun in this document, you should check out:</p>
 	        <div class="row">
 	        	<div class="large-4 medium-4 columns">

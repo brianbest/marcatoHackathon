@@ -2,7 +2,8 @@
 //Global Vars
 //===================================================
 var final_transcript ='';
-
+var transcript ='';
+var answer = '2';
 
 //===================================================
 
@@ -17,13 +18,15 @@ if (!('webkitSpeechRecognition' in window)) {
 
   //recognition.onstart = function() { ... }
   recognition.onresult = function(event) {
-    var interim_transcript = event.results[0][0].transcript;
-    alert(interim_transcript);
+    transcript = event.results[0][0].transcript;
+
   };
   recognition.onend = function() {
-    if (recognizing) {
-      recognition.stop();
-      return;
+    recognition.stop();
+    if (transcript === answer){
+      alert('Right!');
+    }else{
+      alert('WRONG! -- GTFO!');
     }
   };
   recognition.onerror = function(event) {

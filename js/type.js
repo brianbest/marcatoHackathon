@@ -1,70 +1,125 @@
 function runTest() {
-	//temp score variables for each skill
+	//score variables for each skill
 	//kinetic, visual, audio .. at default values
-	var tempScoreK = 1;
-	var tempScoreV = 9;
-	var tempScoreA = 0;
+	//tempScores will become score and reset to 0 after every "round" of 10 questions
+	var scoreK = 2;
+	var scoreV = 7;
+	var scoreA = 1;
 
 	//scores to be calculated every round
-	var scoreK = 0;
-	var scoreV = 0;
-	var scoreA = 0;
+	var tempScoreK = 0;
+	var tempScoreV = 0;
+	var tempScoreA = 0;
 
 	//default totalScore
 	var totalScore = 10;
 
 	//scores used to calculate weight for questions
-	var skillK = tempScoreK/ totalScore;
-	var skillV = tempScoreV/ totalScore;
-	var skillA = tempScoreA/ totalScore;
+	var skillK = scoreK/ totalScore;
+	var skillV = scoreV/ totalScore;
+	var skillA = scoreA/ totalScore;
 
 	setType();
 
 	function setType() {
+		//creating objects for skills array
+		var kinetic = {value: skillK, name: "skillK"};
+		var visual = {value: skillV, name: "skillV"};
+		var audio = {value: skillA, name: "skillA"};
 		//create array for skills
-		var weight = [skillK, skillV, skillA];
+		var weight = [kinetic, visual, audio];
+
 		//sort numerically/ascending
-		weight.sort(function(a, b){return a-b});
+		function compare(a,b) {
+  			if (a.value < b.value)
+     		return -1;
+  			if (a.value > b.value)
+    		return 1;
+  			return 0;
+		}
+		weight.sort(compare);
 
 		//implementing dominant skill cap of 0.5 (if needed)
 		var dominantSkill = weight[2];
 		if (dominantSkill > 0.5) {
 			//save the amount that has been shaved off
-			var shaveScore = weight[2] - 0.5;
+			var shaveScore = weight[2].value - 0.5;
 			//reduce the largest to 0.5
-			weight[2] = 0.5;
+			weight[2].value -= shaveScore;
 
 			//distribute the shaved amount between the weaker skills
 			var addScore = shaveScore/ 2;
 			
-			weight[0] += addScore;
-			weight[1] += addScore;
-			
-			//check
-			console.log("dominant skill reduced to 0.5");
-			console.log(weight[0] + "," + weight[1] + "," + weight[2]);
+			weight[0].value += addScore;
+			weight[1].value += addScore;
 		}
 
 		//random variable to choose type
 		var typeSetter = Math.random();
 
 		//for the weakest skill
-		 if (typeSetter <= weight[0]) {
-		 	console.log("Running the smallest");
+		 if (typeSetter <= weight[0].value) {
+		 	console.log("smallest");
+
+		 	switch (weight[0].name) {
+
+		 		case "skillK":
+		 			console.log("It's K");
+		 			break;
+				
+				case "skillV":
+					console.log("It's V");
+					break;
+
+				case "skillA":
+					console.log("It's A");
+					break; 
+		 	}
 		 	return;
 		 }
 
 		 //for the strongest skill
-		 var weightCalc = weight[0] + weight[1];
+		 var weightCalc = weight[0].value + weight[1].value;
 
 		 if (typeSetter >= weightCalc) {
-		 	console.log("Running the largest");
+		 	console.log("largest");
+
+		 	switch (weight[2].name) {
+
+		 		case "skillK":
+		 			console.log("It's K");
+		 			break;
+				
+				case "skillV":
+					console.log("It's V");
+					break;
+
+				case "skillA":
+					console.log("It's A");
+					break; 
+		 	}
 		 	return;
 		 }
 
 		 //for the middle skill
 		 else {
-		 	console.log("Running the middle");
+		 	console.log("middle");
+
+		 	switch (weight[1].name) {
+
+		 		case "skillK":
+		 			console.log("It's K");
+		 			break;
+				
+				case "skillV":
+					console.log("It's V");
+					break;
+
+				case "skillA":
+					console.log("It's A");
+					break; 
+		 	}
+		 	return;
 		 }
 	}
 }

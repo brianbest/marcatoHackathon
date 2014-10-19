@@ -83,7 +83,7 @@ function upgrade(){
 
 var i = ['',textQuestion,speechQuestion,dragQuestion];
 
-i[3](selectedQuestion.rightAnswer);
+i[](selectedQuestion.rightAnswer);
 
 //Carols text
 //=========================================================

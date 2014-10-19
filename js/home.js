@@ -1,3 +1,13 @@
-element.style{
-	background-image: url(url(http://http://adventure.nationalgeographic.com/adventure-ratings-09/serendipity-adventures.jpg))
-}
+$(document).ready(function(){
+	$("#educatorForm").hide();
+	$("#educator").click(function(){
+		$("#educatorForm").toggle();
+	});
+});
+
+$(document).ready(function(){
+	$("#studentForm").hide();
+	$("#student").click(function(){
+		$("#studentForm").toggle();
+	});
+});

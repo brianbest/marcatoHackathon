@@ -23,10 +23,11 @@ header{
 }
 
 h1 {
-	font-size: 36px;
-	font-family: Helvetica;
+	font-size: 72px;
+	font-family: sans-serif;
 	font-weight: bold;
 	color: black;
+	margin-top: -10px;
 }
 .subtitle{
 	color: #FF7260;
@@ -76,19 +77,50 @@ button{
 }
 form{
 	background-color: rgba(18, 151, 147, 0.75);
+	color: white;
 }
 .login{
 	border: 3px solid #129793;
 	background-color: #505050;
-	color: #FF596D;
+	color: white;
+}
+label{
+	color: white;
+}
+a{
+	color: black;
 }
 .register{
 	font-size: 32px;
 	font-weight: bold;
-	font: helvetica;
+	font: sans-serif;
 	height: 60px;
-	text-decoration: underline;
 	color: white;
+	margin-top: 20px;
+}
+
+.underlineReg{
+	color: #FF596D;
+	font-weight: bold;
+	margin-top: -25px;
+	margin-bottom: 15px;
+
+}
+#educatorSubmit{
+	width: 10%;
+	background-color: #FF596D;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+	border-radius: 7%;
+}
+#studentSubmit{
+	width: 10%;
+	background-color: #FF596D;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 20px;
+	border-radius: 7%;
 }
 
 #about{

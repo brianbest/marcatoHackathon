@@ -3,9 +3,6 @@ $(document).ready(function(){
 	$("#educator").click(function(){
 		$("#educatorForm").toggle();
 	});
-});
-
-$(document).ready(function(){
 	$("#studentForm").hide();
 	$("#student").click(function(){
 		$("#studentForm").toggle();

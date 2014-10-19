@@ -85,6 +85,10 @@ body{
   color:#505050;
 }
 
+#txtans{
+  text-align:center;
+}
+
 /*.textQuestion{background-color:#129793;}
 .dragQuestion{background-color:#9BD7D5;}
 .speechQuestion{background-color:#505050;}*/

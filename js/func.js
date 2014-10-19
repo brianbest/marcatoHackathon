@@ -34,12 +34,12 @@ function makeQuestion(questions, rights, wrong1, wrong2){
 		// return thisQuestion;
 }
 	//default question objects
-	var question1 = new makeQuestion("What color is the sky?", "Blue", "Hex", "Dunno");
-	var question2 = new makeQuestion("What color is the ocean?", "Blue", "Cloth", "Knife");
-	var question3 = new makeQuestion("What time is it?", "Now", "Never", "Before");
+	// var question1 = new makeQuestion("What color is the sky?", "Blue", "Hex", "Dunno");
+	// var question2 = new makeQuestion("What color is the ocean?", "Blue", "Cloth", "Knife");
+	// var question3 = new makeQuestion("What time is it?", "Now", "Never", "Before");
 
 	//array of questions
-	var questionBin = [question1, question2, question3];
+	// var questionBin = [question1, question2, question3];
 	var selectedQuestion = "";
 
 //function for picking a random question

@@ -91,7 +91,7 @@ function upgrade(){
 //Carols text
 //=========================================================
 function textQuestion(a){
-	var answer = a.toLowerCase();;
+	var answer = a.toLowerCase();
 
 	$('.textQuestion').removeClass('hide');
 	$('form').submit(function(){
@@ -288,14 +288,14 @@ function endRound(){
 	$('#endRight').html(total_overall);
 	var wrongQ =  total_asked - total_overall;
 	$('#endWrong').html(wrongQ);
-	totalWin = (total_overall/total_asked) * 100;
+	var totalWin = Math.floor((total_overall/total_asked) * 100);
 	$('#endTotal').html(totalWin = '%');
 
 	var totalAff = total_scoreK + total_scoreV + total_scoreA;
 
-	var kAff = (total_scoreK/totalAff) * 100;
-	var vAff = (total_scoreV/totalAff) * 100;
-	var aAff = (total_scoreA/totalAff) * 100;
+	var kAff = Math.floor((total_scoreK/totalAff) * 100);
+	var vAff = Math.floor((total_scoreV/totalAff) * 100);
+	var aAff = Math.floor((total_scoreA/totalAff) * 100);
 
 	$('#endAudio').html(aAff + '%');
 	$('#endVisual').html(vAff + '%');

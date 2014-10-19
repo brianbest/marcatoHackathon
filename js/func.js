@@ -217,7 +217,6 @@ function dragQuestion(a) {
 					if (checkAnswer === computeAnswer) {
 						var msg = new SpeechSynthesisUtterance('correct!');
 							window.speechSynthesis.speak(msg);
-						$('#answerbox').html("Correct");
 						$('.dragQuestion').addClass('hide');
 						total_scoreK++;
 						total_overall++;
@@ -234,7 +233,6 @@ function dragQuestion(a) {
 					else {
 						var msg = new SpeechSynthesisUtterance('wrong!');
 							window.speechSynthesis.speak(msg);
-						$('#answerbox').html( "Incorrect! Try again dummy" );
 						$('.dragQuestion').addClass('hide');
 						total_asked++;
 

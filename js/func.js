@@ -263,8 +263,18 @@ function touchHandler(event) {
 }
 
 function mobileInit() {
-    document.addEventListener("touchstart", touchHandler, true);
-    document.addEventListener("touchmove", touchHandler, true);
-    document.addEventListener("touchend", touchHandler, true);
-    document.addEventListener("touchcancel", touchHandler, true);
+    $('#answer1').addEventListener("touchstart", touchHandler, true);
+    $('#answer1').addEventListener("touchmove", touchHandler, true);
+    $('#answer1').addEventListener("touchend", touchHandler, true);
+    $('#answer1').addEventListener("touchcancel", touchHandler, true);
+
+		$('#answer2').addEventListener("touchstart", touchHandler, true);
+		$('#answer2').addEventListener("touchmove", touchHandler, true);
+		$('#answer2').addEventListener("touchend", touchHandler, true);
+		$('#answer2').addEventListener("touchcancel", touchHandler, true);
+
+		$('#answer3').addEventListener("touchstart", touchHandler, true);
+		$('#answer3').addEventListener("touchmove", touchHandler, true);
+		$('#answer3').addEventListener("touchend", touchHandler, true);
+		$('#answer3').addEventListener("touchcancel", touchHandler, true);
 }

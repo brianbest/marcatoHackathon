@@ -1,46 +1,67 @@
 
+
 .mainHeader {
 	width: 100%;
-	height: 430px;
+	height: 600px;
 	background-color: #19191B;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
+	position: relative;
+}
+header{
+	background-size: 100%;
+	background-position: fixed;
 }
 .text{
 	float: right;
+	position: absolute;
+	clear: both;
+
 }
 .openingTitle{
 	padding-top: 1%;
 	padding-bottom: 1%;
-	text-align: left;
-	border: 3px solid black;
-	float: left;
+	position: absolute;
+	clear: both;
 }
 
-h1{
+h1 a:hover{
 	font-size: 36px;
 	background-color: white;
 	font-family: Helvetica;
-	text-align: left;
 	font-weight: bold;
 	color: black;
-	text-shadow:
-	-1px -1px 0 #FF7260	
-	-1px -1px 0 #FF7260
 }
-.subtitle{
+.subtitle a:hover{
 	color: #FF7260;
 	background-color: black;
-	float: left;
+	clear:both;
 }
 h3{
 	font-family: Helvetica;
 	color: black;
-	float: left;
-	text-align: left;
+	clear:both;
+	text-align: center;
 	padding-top: 1%;
 	padding-bottom: 1%;
+}
+button{
+	
+}
+#registerButton{
+	height: 100px;
+	position:relative;
+	margin: 0 auto;
+	display: block;
+	border-bottom: 2px black solid;
+	width: 100%;
+}
+.student{
+	height:100px;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	border-left: 2px black solid;
+	border-bottom: 2px black solid;
+	clear: both;
 }
 form{
 	background-color: rgba(18, 151, 147, 0.75);

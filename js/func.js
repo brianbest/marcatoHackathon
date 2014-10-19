@@ -81,9 +81,7 @@ function upgrade(){
 }
 //===================================================
 
-var i = ['',textQuestion,speechQuestion,dragQuestion];
 
-i[](selectedQuestion.rightAnswer);
 
 //Carols text
 //=========================================================

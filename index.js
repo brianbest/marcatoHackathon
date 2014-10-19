@@ -4,9 +4,9 @@ var http = require('http').Server(app);
 //var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/questions.html');
+  res.sendFile(__dirname + '/home.html');
 });
-
+ app.use("/questions.html", express.static(__dirname + '/questions.html'));
  app.use("/css", express.static(__dirname + '/css'));
  app.use("/js", express.static(__dirname + '/js'));
  app.use("/fonts", express.static(__dirname + '/fonts'));

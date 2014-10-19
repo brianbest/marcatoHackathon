@@ -34,37 +34,48 @@
   </head>
   <body>
 
-    <div class="small-12 small-12 columns top">
-      <p> </p>
-    </div>
+    <header class="mainHeader" style="background-image: url(http://adventure.nationalgeographic.com/adventure-ratings-09/serendipity-adventures.jpg)">
+      <div id="title" class = "small-12 small-12 text">
+        <div class="small-12 small-12 columns openingTitle">
+          <h1 class="openingTitle">Welcome to Mustle</h1>
+        </div>
+        <div class="small-12 small-12 columns subtitle">
+          <h3 class="subtitle">Put your brain in gear. The best way you know how.</h3>
+        </div>
+      </div>
+    </header>
 
-    <!--<header class="mainHeader" style="background-image: url(http://http://adventure.nationalgeographic.com/adventure-ratings-09/serendipity-adventures.jpg)">
-      <div class= "small-12 columns">
-        < -->
-      <div class= "small-5 small-5 columns">
-        <img></img>
-      </div>
-      
-      <div class = "small-8 small-8 text">
-      <div class="small-12 small-12 columns openingTitle">
-        <h1 class="openingTitle">Welcome to Mustle!</h1>
-      </div>
-      <div class="small-12 small-12 columns subtitle">
-        <h3 class="subtitle">Put your brain in gear. The best way you know how.</h3>
-      </div>
     
-        <form>
+    <div id="registerButton" class="small-6 small-6 columns">
+      <div class="small-6 small-6 columns">
+        <button id="educator">Educator</button>
+      </div>
+      <div class="small-6 small-6 columns">
+        <button id="student">Student</button>
+      </div>
+    </div>
+    
+
+    <!--This is the form for the Educators -->
+        <form id="educatorForm">
           <div class="small-12 columns login">
           <div class="row">
             <div class="small-10 columns">
-              <label class="register">Register</label>
+              <label class="register">Registration for Educator</label>
+              <label class="underlineReg">______________________</label>
             </div>
           </div>
 				  <div class="row">
 				    <div class="small-12 small-12 columns">
-				      <label>Name:</label>
+				      <label>Instructor Name:</label>
 				      <input type="text" placeholder=" " />
 				    </div>
+          </div>
+          <div class="row">
+            <div class="small-12 small-12 columns">
+              <label>Subject:</label>
+              <input type="text" placeholder=" " />
+            </div>
           </div>
 				  <div class="row">
 				    <div class="small-12 small-12 columns">
@@ -78,14 +89,91 @@
               <input type="text" placeholder=" " />
             </div>
           </div>
-          <button >Submit</button>
+          <button id="educatorSubmit"> <a href="instr.html">Submit</a></button>
         </div>
-				</form>
+			</form>
+
+      <!--This is the form for the Students -->
+        <form id="studentForm">
+          <div class="small-12 columns login">
+          <div class="row">
+            <div class="small-10 columns">
+              <label class="register">Registation for Student</label>
+              <label class="underlineReg">______________________</label>
+            </div>
+          </div>
+          <div class="textForm">
+          <div class="row">
+            <div class="small-12 small-12 columns">
+              <label>Student Name:</label>
+              <input type="text" placeholder=" " />
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 small-12 columns">
+              <label>Area of Study:</label>
+              <input type="text" placeholder=" " />
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 small-12 columns">
+              <label>Email: </label>
+              <input type="text" placeholder=" " />
+            </div>
+          </div>
+         <div class="row">
+            <div class="small-12 small-12 columns">
+              <label>Password: </label>
+              <input type="text" placeholder=" " />
+            </div>
+          </div>
+          <button id="studentSubmit"><a href="questions.html"> Submit </a></button>
+        </div>
+        </div>
+      </form>
+
+
+    <div id="about" class="small-12 small-12 columns">
+      <h3 class= "aboutTitle">About</h3>
+      <h3 class= "aboutUnder">________</h3>
+      <p class="aboutBody">Mustle is a service for educators to develop content that meets the learning needs of their students.  Using the old adage of "read it, write it, and say it", Mustle takes into account students natural affinity for answering questions in a visual, kinetic, or auditory format. </p> <p class="aboutBody">We learn from students to create a individualized learning paths and can provide analytics to improve the learning experience. Educators of all disciplines can easily create content for students that will automatically be tailored to their natural learning styles. <br> </br></p>
+    </div>
+
+    <div id="footer" class="small-12 small-12 columns">
+      <div class= "small-3 small-3 columns">
+        <div class="contact">
+          <p>How to reach us: </br>
+          Send us a message!</p>
+        </div>
       </div>
-    </div>     
+      <div class= "small-3 small-3 columns">
+        <div class="contact">
+          <p>
+          Address:</br>
+          37 Napean Street</br>
+          Sydney, Cape Breton</br>
+          Nova Scotia, Canada</br>
+        </p>
+        </div>
+      </div>
+      <div class="small-6 small-6 columns">
+        <div class="small-6 small-6 columns">
+          <input class= "email" type="text" placeholder="Your Name" />
+        </div>
+        <div class="small-6 small-6 columns" />
+          <input class= "email" type="text" placeholder="Your Email" />
+        </div>
+        <div class="small-12 small-12 columns" />
+          <input class= "message" type="text" placeholder="Your Message" />
+          </br></br>
+        </div>
+      </div>
+    </div>
+
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/home.js"></script>
     <script>
       $(document).foundation();
     </script>

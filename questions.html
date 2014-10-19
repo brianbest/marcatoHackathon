@@ -1,0 +1,107 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzard | Welcome</title>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/brian.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+
+  <!-- adding the menu bar -->
+  <div class="fixed">
+  <nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">__   *Quizzard*  __ </a>
+        <ul class="dropdown">
+          <li class="active"><a href="#">Profile</a></li>
+          <li class="active"><a href="#">Add a Quiz</a></li>
+          <li class="active"><a href="#">Be Quizzed</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
+</div>
+
+  </head>
+  <body>
+    <!-- questions box! -->
+
+    <!--the actual question -->
+    <div class="forceHeight">
+      <div class="row">
+        <div class="large-5 medium-5 small-centered columns questionbox">
+          <p align='center'></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="answerArea" class="large-4 small-centered medium-4 columns answerbox">
+          <p align='center' id="answerbox">&nbsp;</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <h5 align='center'>Choose your answer:</h5>
+      </div>
+    </div>
+
+    <!-- Speech area  -->
+    <div class="row speechQuestion hide">
+      <div class="large-12 medium-12 columns">
+        <button onclick="startButton()">Start Record</button>
+        <button onclick="playQuestion()">Read Question</button>
+        <p id="capText">Captured Text</p>
+      </div>
+    </div>
+
+    <!-- Drag area -->
+    <div class="row dragQuestion hide">
+      <div class="large-12 medium-12 columns">
+        <div class="answers"style="width: 30%; text-align: left; margin: 0 auto">
+          <style>
+          .answers div {width: 30%; display: inline-block; margin 0 auto; border: 2px solid black;}
+          </style>
+          <div id="answer1" class="answer"></div>
+          <div id="answer2" class"answer"></div>
+          <div id="answer3" class="answer"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Text area -->
+      <div class="row textQuestion hide">
+        <div class="large-12 columns">
+          <form action="">
+            <input type="text" id="txtans" placebolder="large"/>
+          </form>
+        </div>
+      </div>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!--<script src="js/vendor/jquery.js"></script>-->
+    <script src="js/foundation.min.js"></script>
+    <script src="js/func.js" type="text/JavaScript"></script>
+    <script src="js/reload.js" type="text/JavaScript"></script>
+    <script src="js/type.js" type="text/JavaScript"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

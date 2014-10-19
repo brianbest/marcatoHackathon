@@ -1,0 +1,14 @@
+.questionbox,#answerArea{
+  height:25rem;
+  max-height:50%;
+}
+
+#answerArea{
+  border:1px dotted #d6d6d6;
+
+}
+
+
+.forceHeight{
+  min-height:70%;
+}

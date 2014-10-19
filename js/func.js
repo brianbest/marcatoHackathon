@@ -102,11 +102,15 @@ function textQuestion(a){
 		var text = document.createTextNode(txtanswer);
 		document.getElementById("answerbox").appendChild(text);
 		if(txtanswer !== answer){
+			var msg = new SpeechSynthesisUtterance('wrong!');
+				window.speechSynthesis.speak(msg);
 			total_asked++;
 			document.getElementById("txtans").value="";
 			$('.textQuestion').addClass('hide');
 			getNewQuestion();
 		}else{
+			var msg = new SpeechSynthesisUtterance('correct!');
+				window.speechSynthesis.speak(msg);
 			console.log("Correct!");
 			total_scoreA++;
 			total_overall++;
@@ -211,6 +215,8 @@ function dragQuestion(a) {
 				var checkAnswer = selectedAnswer.innerHTML;
 				console.log(checkAnswer + computeAnswer);
 					if (checkAnswer === computeAnswer) {
+						var msg = new SpeechSynthesisUtterance('correct!');
+							window.speechSynthesis.speak(msg);
 						$('#answerbox').html("Correct");
 						$('.dragQuestion').addClass('hide');
 						total_scoreK++;
@@ -226,6 +232,8 @@ function dragQuestion(a) {
 
 					}
 					else {
+						var msg = new SpeechSynthesisUtterance('wrong!');
+							window.speechSynthesis.speak(msg);
 						$('#answerbox').html( "Incorrect! Try again dummy" );
 						$('.dragQuestion').addClass('hide');
 						total_asked++;
@@ -289,7 +297,7 @@ function endRound(){
 	var wrongQ =  total_asked - total_overall;
 	$('#endWrong').html(wrongQ);
 	var totalWin = Math.floor((total_overall/total_asked) * 100);
-	$('#endTotal').html(totalWin = '%');
+	$('#endTotal').html(totalWin + '%');
 
 	var totalAff = total_scoreK + total_scoreV + total_scoreA;
 

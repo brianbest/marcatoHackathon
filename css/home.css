@@ -1,0 +1,64 @@
+
+.mainHeader {
+	width: 100%;
+	height: 430px;
+	background-color: #19191B;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+}
+.text{
+	float: right;
+}
+.openingTitle{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	text-align: left;
+	border: 3px solid black;
+	float: left;
+}
+
+h1{
+	font-size: 36px;
+	background-color: white;
+	font-family: Helvetica;
+	text-align: left;
+	font-weight: bold;
+	color: black;
+	text-shadow:
+	-1px -1px 0 #FF7260	
+	-1px -1px 0 #FF7260
+}
+.subtitle{
+	color: #FF7260;
+	background-color: black;
+	float: left;
+}
+h3{
+	font-family: Helvetica;
+	color: black;
+	float: left;
+	text-align: left;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+form{
+	background-color: rgba(18, 151, 147, 0.75);
+}
+.login{
+	border: 3px solid #129793;
+	background-color: #9BD7D5;
+}
+.register{
+	font-size: 32px;
+	font-weight: bold;
+	font: helvetica;
+	height: 60px;
+	font:underline;
+}
+
+button{
+	background-color: #129793;
+	position: center;
+	margin-left: 89px;
+}

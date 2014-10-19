@@ -1,0 +1,20 @@
+*{
+	font-weight: bold;
+}
+
+#correct{
+	background-color: rgba(111, 220, 111, 0.5);
+}
+#ctext{
+	color: black;
+	font-weight: bold;
+}
+
+#wrong{
+	background-color: rgba(255, 76, 76, 0.5);
+	color: #660000;
+}
+#wtext{
+	color: black;
+	font-weight: bold;
+}

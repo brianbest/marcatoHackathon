@@ -81,7 +81,9 @@ function upgrade(){
 }
 //===================================================
 
-speechQuestion(selectedQuestion.rightAnswer);
+var i = ['',textQuestion,speechQuestion,dragQuestion];
+
+i[3](selectedQuestion.rightAnswer);
 
 //Carols text
 //=========================================================
@@ -139,7 +141,7 @@ function speechQuestion(a){
 
 //Jake's code
 //===================================================
-function dragQuestion() {
+function dragQuestion(a) {
 	$('.dragQuestion').removeClass('hide');
 
 	$('#answerbox').html('drag your answer here');

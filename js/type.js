@@ -65,6 +65,9 @@ function runTest(kScore,vScore,aScore,qNumber) {
 		//random variable to choose type
 		var typeSetter = Math.random();
 
+		//for the strongest skill
+		var weightCalc = weight[0].value + weight[1].value;
+
 		//for the weakest skill
 		 if (typeSetter <= weight[0].value) {
 		 	console.log("smallest");
@@ -86,13 +89,8 @@ function runTest(kScore,vScore,aScore,qNumber) {
 					textQuestion(selectedQuestion.rightAnswer);
 					break;
 		 	}
-		 	return;
-		 }
 
-		 //for the strongest skill
-		 var weightCalc = weight[0].value + weight[1].value;
-
-		 if (typeSetter >= weightCalc) {
+		 }else if (typeSetter >= weightCalc) {
 		 	console.log("largest");
 
 		 	switch (weight[2].name) {
@@ -112,7 +110,7 @@ function runTest(kScore,vScore,aScore,qNumber) {
 					textQuestion(selectedQuestion.rightAnswer);
 					break;
 		 	}
-		 	return;
+
 		 }
 
 		 //for the middle skill
@@ -136,7 +134,7 @@ function runTest(kScore,vScore,aScore,qNumber) {
 					textQuestion(selectedQuestion.rightAnswer);
 					break;
 		 	}
-		 	return;
+
 		 }
 	}
 }

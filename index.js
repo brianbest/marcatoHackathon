@@ -9,6 +9,7 @@ app.get('/', function(req, res){
 
  app.use("/css", express.static(__dirname + '/css'));
  app.use("/js", express.static(__dirname + '/js'));
+ app.use("/fonts", express.static(__dirname + '/fonts'));
 
 
 // app.use("/mic-animate.gif", express.static(__dirname + '/mic-animate.gif'));

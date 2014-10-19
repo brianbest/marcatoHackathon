@@ -1,3 +1,11 @@
+body{
+  background-image:url('http://subtlepatterns.com/patterns/agsquare.png')
+}
+
+.top-bar,.contain-to-grid,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button){
+  background: rgba(0,0,0,0);
+}
+
 .questionbox,#answerArea{
   height:18rem;
 
@@ -10,7 +18,7 @@
 
 .questionbox p{
   padding-top: 5rem;
-  font-size: 2rem;
+  font-size: 4rem;
   color:#505050;
 }
 
@@ -19,6 +27,7 @@
 }
 
 .questArea{
+  width:100%;
   position:fixed;
   bottom:0;
   background-color:#9BD7D5;

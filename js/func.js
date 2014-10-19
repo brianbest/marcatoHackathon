@@ -109,7 +109,7 @@ function textQuestion(a){
 		}else{
 			console.log("Correct!");
 			total_scoreA++;
-			total_overall
+			total_overall++;
 			total_asked++;
 			document.getElementById("txtans").value="";
 			$('.textQuestion').addClass('hide');
@@ -277,4 +277,27 @@ function mobileInit() {
 		$('#answer3').addEventListener("touchmove", touchHandler, true);
 		$('#answer3').addEventListener("touchend", touchHandler, true);
 		$('#answer3').addEventListener("touchcancel", touchHandler, true);
+}
+
+
+//End the round
+//===================================================
+function endRound(){
+	$('.forceHeight').addClass('hide');
+	$('.endRound').removeClass('hide');
+	$('#endRight').html(total_overall);
+	var wrongQ =  total_asked - total_overall;
+	$('#endWrong').html(wrongQ);
+	totalWin = (total_overall/total_asked) * 100;
+	$('#endTotal').html(totalWin = '%');
+
+	var totalAff = total_scoreK + total_scoreV + total_scoreA;
+
+	var kAff = (total_scoreK/totalAff) * 100;
+	var vAff = (total_scoreV/totalAff) * 100;
+	var aAff = (total_scoreA/totalAff) * 100;
+
+	$('#endAudio').html(aAff + '%');
+	$('#endVisual').html(vAff + '%');
+	$('#endKinetic').html(kAff + '%');
 }

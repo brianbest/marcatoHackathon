@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quizzard | Welcome</title>
+    <title>Mustle | Welcome</title>
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -13,7 +13,7 @@
 
 
   <!-- adding the menu bar -->
-  <div class="fixed">
+  <div class="fixed contain-to-grid">
   <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -24,7 +24,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a href="#">__   *Quizzard*  __ </a>
+        <a href="#"><i class="fa fa-bars fa-3x" style="color:#505050; padding-top:1rem;"></i></a>
         <ul class="dropdown">
           <li class="active"><a href="#">Profile</a></li>
           <li class="active"><a href="#">Add a Quiz</a></li>
@@ -43,7 +43,7 @@
     <!--the actual question -->
     <div class="forceHeight">
       <div class="row">
-        <div class="large-5 medium-5 small-centered columns questionbox">
+        <div class="large-6 medium-6 small-centered columns questionbox">
           <p align='center'></p>
         </div>
       </div>
@@ -63,7 +63,7 @@
     <!-- QUESTION AREA -->
 
     <!-- Speech area  -->
-    <div class="row speechQuestion questArea hide">
+    <div class=" speechQuestion questArea hide">
       <div class="t2sarea columns">
         <h3 align="center">Say it!</h3>
         <button onclick="startButton()"><i class="fa fa-microphone fa-2x"></i></button>
@@ -73,10 +73,10 @@
     </div>
 
     <!-- Drag area -->
-    <div class="row dragQuestion questArea hide">
+    <div class=" dragQuestion questArea hide">
       <div class="large-12 medium-12 columns">
         <h3 align="center">Drag it!</h3>
-        <div class="answers"style="width: 52%; text-align: left; margin: 0 auto">
+        <div class="answers"style="width: 440px; text-align: left; margin: 0 auto; display:block;">
           <style>
           /*.answers div {width: 30%; display: inline-block; margin 0 auto; border: 2px solid black; background-color:#FF7260}*/
           </style>
@@ -89,7 +89,7 @@
     </div>
 
     <!-- Text area -->
-      <div class="row textQuestion questArea hide">
+      <div class=" textQuestion questArea hide">
         <div class="large-12 columns">
           <h3 align="center">Write it!</h3>
           <form action="">
@@ -97,7 +97,21 @@
           </form>
         </div>
       </div>
-
+      <!-- End of round -->
+      <div class="endRound hide">
+        <h1 align="center">Round Complete!</h1>
+        <div class="row">
+          <div class="large-6 medium-6 columns">
+            <h5>Correct Answers: <span id="endRight"></span></h5>
+            <h5>Wrong Answers: <span id="endWrong"></span></h5>
+            <h5>Total: <span id="endTotal"></span></h5>
+          </div>
+          <div class="large-6 medium-6 columns">
+            <h5>Audio: <span id="endAudio"></span></h5>
+            <h5>Visual: <span id="endVisual"></span></h5>
+            <h5>kinetic: <span id="endKinetic"></span></h5>
+          </div>
+        </div>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <!--<script src="js/vendor/jquery.js"></script>-->

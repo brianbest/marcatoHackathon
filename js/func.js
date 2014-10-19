@@ -91,20 +91,31 @@ function upgrade(){
 //Carols text
 //=========================================================
 function textQuestion(a){
+	var answer = a.toLowerCase();;
 
 	$('.textQuestion').removeClass('hide');
-
 	$('form').submit(function(){
 		event.preventDefault();
-		var answer = document.getElementById("txtans").value;
-		console.log("answer is" +answer);
-		var text = document.createTextNode(answer);
+		var txtanswer = document.getElementById("txtans").value;
+		var txtanswer = txtanswer.toLowerCase();
+		console.log("user answer is " +txtanswer);
+		var text = document.createTextNode(txtanswer);
 		document.getElementById("answerbox").appendChild(text);
+		if(txtanswer !== answer){
+			total_asked++;
+			document.getElementById("txtans").value="";
+			$('.textQuestion').addClass('hide');
+			getNewQuestion();
+		}else{
+			console.log("Correct!");
+			total_scoreA++;
+			total_overall
+			total_asked++;
+			document.getElementById("txtans").value="";
+			$('.textQuestion').addClass('hide');
+			getNewQuestion();
+		};
 
-		document.getElementById("txtans").value="";
-
-		total_scoreA++;
-		total_asked++;
 	});
 }
 //=========================================================
@@ -184,9 +195,9 @@ function dragQuestion(a) {
 		}
 	}
 
-	$('#answer1').draggable();
-	$('#answer2').draggable();
-	$('#answer3').draggable();
+	$('#answer1').draggable({revert: "valid"});
+	$('#answer2').draggable({revert: "valid"});
+	$('#answer3').draggable({revert: "valid"});
 
 	$('#answerArea').droppable( {
 			drop: function( event, ui ) {
@@ -195,18 +206,30 @@ function dragQuestion(a) {
 				var checkAnswer = selectedAnswer.innerHTML;
 				console.log(checkAnswer + computeAnswer);
 					if (checkAnswer === computeAnswer) {
-						$('#answerArea').html("Correct");
+						$('#answerbox').html("Correct");
 						$('.dragQuestion').addClass('hide');
 						total_scoreK++;
 						total_overall++;
 						total_asked++;
+
+						//clear old answers
+						$('#answer1').html("");
+						$('#answer2').html("");
+						$('#answer3').html("");
+
 						getNewQuestion();
 
 					}
 					else {
-						$('#answerArea').html( "Incorrect! Try again dummy" );
+						$('#answerbox').html( "Incorrect! Try again dummy" );
 						$('.dragQuestion').addClass('hide');
 						total_asked++;
+
+						//clear old answers
+						$('#answer1').html("");
+						$('#answer2').html("");
+						$('#answer3').html("");
+
 						getNewQuestion();
 					}
 			}

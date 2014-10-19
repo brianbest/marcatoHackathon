@@ -24,7 +24,9 @@ function runTest(kScore,vScore,aScore,qNumber) {
 	}else{
 		// If no question has been answered correctly then randomly select type
 		var a = [dragQuestion,speechQuestion,textQuestion];
-		a[Math.floor((Math.random() * 3))](selectedQuestion.rightAnswer);
+		var ran = Math.floor((Math.random() * 3));
+		console.log(ran);
+		a[ran](selectedQuestion.rightAnswer);
 	}
 
 	function setType() {

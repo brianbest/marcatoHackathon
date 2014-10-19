@@ -38,20 +38,10 @@
         <h1>Welcome Instructors!</h1></br>
       </div>
     </div>
-    
-    <div class="row">
-      <div class="large-12 columns">
-      	<div class="panel">
-	        <h3>Simple and Fun Way of Testing</h3></br>
-	        <p>As you know students learn in a variety of different ways. We encourage this! more dummy text...blah blah blah</p><br></br>
-          <p></p><br></br>
-	       </div>        
-			</div>
-    </div>
 
     <div class="row">
       <div class="large-12 columns">     
-        <h5>Enter your Quiz Questions here:</h5>
+        <h2>Enter your Quiz Questions here:</h2>
       </div>
     </div>
   </br>
@@ -170,9 +160,7 @@
           </div>
 				</form>
 
-        <p>Load More</p>
-
-        <form> <span>
+        <form id="more">
           <div class="row">
             <div class="large-12 columns">
               <label id="ctext">Question</label>
@@ -285,12 +273,25 @@
               <input id="wrong" type="text" placeholder=" " />
             </div>
           </div>
-        </span>
         </form>
-        
+
+        <div class="row">
+          <div class="large-9 medium-9 columns">
+            <p>&nbsp;</p>
+          </div>
+
+        <div class="row">
+          <div class="large-2 medium-2 columns">
+            <button id="show">Load More</button>
+          </div>
+          <div class="large-1 medium-1 columns">
+            <button id="submit">Submit</button>
+          </div>
+        </div>
     
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/instr.js"></script>
     <script>
       $(document).foundation();
     </script>

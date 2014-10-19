@@ -1,6 +1,14 @@
 *{
 	font-weight: bold;
 }
+button{
+	background-color: white;
+	border: none;
+	color: black;
+	position: relative;
+	float: right;
+	text-align: center;
+}
 
 #correct{
 	background-color: rgba(111, 220, 111, 0.5);
@@ -10,11 +18,12 @@
 	font-weight: bold;
 }
 
-#wrong{
-	background-color: rgba(255, 76, 76, 0.5);
-	color: #660000;
-}
 #wtext{
 	color: black;
 	font-weight: bold;
+}
+
+#wrong{
+	background-color: rgba(255, 76, 76, 0.5);
+	color: #660000;
 }

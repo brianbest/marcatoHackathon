@@ -12,7 +12,11 @@
 		var recognition = new webkitSpeechRecognition();
 	}
 
-
+	var total_scoreK = 0;
+	var total_scoreV = 0;
+	var total_scoreA = 0;
+	var total_overall= 0;
+	var total_asked = 0;
 //===================================================
 
 
@@ -41,10 +45,13 @@ function makeQuestion(questions, rights, wrong1, wrong2){
 //function for picking a random question
 function pickQuestion(){
 	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
-	//askQuestion(selectedQuestion);
+
+	//Place question
+	//===================================================
+	$('.questionbox').find('p').html(selectedQuestion.question);
 }
 
-pickQuestion();
+
 
 function shuffleArray(array) {
 		for (var i = array.length - 1; i > 0; i--) {
@@ -56,9 +63,7 @@ function shuffleArray(array) {
 		return array;
 }
 
-//Place question
-//===================================================
-$('.questionbox').find('p').html(selectedQuestion.question);
+
 
 
 
@@ -97,6 +102,9 @@ function textQuestion(a){
 		document.getElementById("answerbox").appendChild(text);
 
 		document.getElementById("txtans").value="";
+
+		total_scoreA++;
+		total_asked++;
 	});
 }
 //=========================================================
@@ -122,11 +130,20 @@ function speechQuestion(a){
 			if (transcript === asked_answer){
 				var msg = new SpeechSynthesisUtterance('correct!');
 					window.speechSynthesis.speak(msg);
-				alert('Right!');
+					total_scoreV++;
+					total_overall++;
+					total_asked++;
+					$('.speechQuestion').addClass('hide');
+					getNewQuestion();
+
+				//alert('Right!');
 			}else{
 				var msg = new SpeechSynthesisUtterance('wrong!');
 					window.speechSynthesis.speak(msg);
-				alert('WRONG! -- GTFO!');
+					$('.speechQuestion').addClass('hide');
+					total_asked++;
+					getNewQuestion();
+				//alert('WRONG! -- GTFO!');
 			}
 		};
 		recognition.onerror = function(event) {
@@ -179,9 +196,18 @@ function dragQuestion(a) {
 				console.log(checkAnswer + computeAnswer);
 					if (checkAnswer === computeAnswer) {
 						$('#answerArea').html("Correct");
+						$('.dragQuestion').addClass('hide');
+						total_scoreK++;
+						total_overall++;
+						total_asked++;
+						getNewQuestion();
+
 					}
 					else {
 						$('#answerArea').html( "Incorrect! Try again dummy" );
+						$('.dragQuestion').addClass('hide');
+						total_asked++;
+						getNewQuestion();
 					}
 			}
 	});

@@ -1,25 +1,31 @@
-function runTest() {
-	//score variables for each skill
-	//kinetic, visual, audio .. at default values
-	//tempScores will become score and reset to 0 after every "round" of 10 questions
-	var scoreK = 2;
-	var scoreV = 7;
-	var scoreA = 1;
+//score variables for each skill
+//kinetic, visual, audio .. at default values
+//tempScores will become score and reset to 0 after every "round" of 10 questions
 
-	//scores to be calculated every round
-	var tempScoreK = 0;
-	var tempScoreV = 0;
-	var tempScoreA = 0;
+function runTest(kScore,vScore,aScore,qNumber) {
 
-	//default totalScore
-	var totalScore = 10;
+	pickQuestion();//Get a question
 
-	//scores used to calculate weight for questions
-	var skillK = scoreK/ totalScore;
-	var skillV = scoreV/ totalScore;
-	var skillA = scoreA/ totalScore;
+	if (kScore > 0 && vScore > 0 && aScore > 0){
+		var scoreK = kScore;
+		var scoreV = vScore;
+		var scoreA = aScore;
 
-	setType();
+		//default totalScore
+		var totalScore = qNumber;
+
+		//scores used to calculate weight for questions
+		var skillK = scoreK/ totalScore;
+		var skillV = scoreV/ totalScore;
+		var skillA = scoreA/ totalScore;
+
+
+		setType();
+	}else{
+		// If no question has been answered correctly then randomly select type
+		var a = [dragQuestion,speechQuestion,textQuestion];
+		a[Math.floor((Math.random() * 3))](selectedQuestion.rightAnswer);
+	}
 
 	function setType() {
 		//creating objects for skills array
@@ -133,4 +139,4 @@ function runTest() {
 	}
 }
 
-runTest();
+runTest(total_scoreK,total_scoreV,total_scoreA,total_overall);

@@ -49,7 +49,7 @@ function runTest() {
 
 			//distribute the shaved amount between the weaker skills
 			var addScore = shaveScore/ 2;
-			
+
 			weight[0].value += addScore;
 			weight[1].value += addScore;
 		}
@@ -65,15 +65,18 @@ function runTest() {
 
 		 		case "skillK":
 		 			console.log("It's K");
+					dragQuestion(selectedQuestion.rightAnswer);
 		 			break;
-				
+
 				case "skillV":
 					console.log("It's V");
+					speechQuestion(selectedQuestion.rightAnswer);
 					break;
 
 				case "skillA":
 					console.log("It's A");
-					break; 
+					textQuestion(selectedQuestion.rightAnswer);
+					break;
 		 	}
 		 	return;
 		 }
@@ -89,14 +92,14 @@ function runTest() {
 		 		case "skillK":
 		 			console.log("It's K");
 		 			break;
-				
+
 				case "skillV":
 					console.log("It's V");
 					break;
 
 				case "skillA":
 					console.log("It's A");
-					break; 
+					break;
 		 	}
 		 	return;
 		 }
@@ -110,14 +113,14 @@ function runTest() {
 		 		case "skillK":
 		 			console.log("It's K");
 		 			break;
-				
+
 				case "skillV":
 					console.log("It's V");
 					break;
 
 				case "skillA":
 					console.log("It's A");
-					break; 
+					break;
 		 	}
 		 	return;
 		 }

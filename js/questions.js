@@ -5,13 +5,11 @@ var question4 = new  makeQuestion("<____> Defines important text", "strong", "bo
 var question5 = new  makeQuestion("<____> Defines a hyperlink", "a", "hyperlink", "hyper");
 var question6 = new  makeQuestion("<____> Defines an HTML form for user input", "form", "format", "section");
 var question7 = new  makeQuestion("<____> Defines emphasized text", "em", "strong", "empire");
-var question8 = new  makeQuestion("<____> Groups related elements in a form", "fieldset", "field", "group");
 var question9 = new  makeQuestion("<____> Specifies self-contained content", "figure", "container", "content");
 var question10 = new  makeQuestion("<____> Defines a footer for a document or section", "footer", "foot", "bottom");
 var question11 = new  makeQuestion("<____> Defines information about the document", "head", "top", "title");
 var question12 = new  makeQuestion("<____> Defines text that is no longer correct", "s", "define", "incorrect");
 var question13 = new  makeQuestion("<____> Defines a header for a document or section", "header", "head", "top");
-var question14 = new  makeQuestion("<____> Defines a group of headings", "hgroup", "headgroup", "headergroup");
 var question15 = new  makeQuestion("<____> Defines the root of an HTML document", "html", "root", "doc");
 var question16 = new  makeQuestion("<____> Defines an inline frame", "iframe", "frameline", "inframe");
 var question17 = new  makeQuestion("<____> Defines an image", "img", "image", "pic");
@@ -36,15 +34,10 @@ var question35 = new  makeQuestion("<____> Defines a drop-down list", "select", 
 var question36 = new  makeQuestion("<____> Defines smaller text", "small", "weak", "zoom");
 var question37 = new  makeQuestion("<____> Defines style information for a document", "style", "font", "format");
 var question38 = new  makeQuestion("<____> Defines subscripted text", "sub", "subscript", "stext");
-var question39 = new  makeQuestion("<____> Defines a visible heading for a <details> element", "summary", "show", "list");
 var question40 = new  makeQuestion("<____> Defines superscripted text", "sup", "super", "show");
 var question41 = new  makeQuestion("<____> Defines a table", "table", "t", "span");
-var question42 = new  makeQuestion("<____> Groups the body content in a table", "tbody", "tablebody", "body");
 var question43 = new  makeQuestion("<____> Defines a cell in a table", "td", "cell", "tablecell");
-var question44 = new  makeQuestion("<____> Defines a multiline input control (text area)", "textarea", "text", "input");
-var question45 = new  makeQuestion("<____> Groups the footer content in a table", "tfoot", "footer", "group");
 var question46 = new  makeQuestion("<____> Defines a header cell in a table", "th", "td", "table");
-var question47 = new  makeQuestion("<____> Groups the header content in a table", "thead", "table", "head");
 var question48 = new  makeQuestion("<____> Defines a date/time", "time", "dt", "now");
 var question49 = new  makeQuestion("<____> Defines a variable", "var", "set", "object");
 var question50 = new  makeQuestion("<____> Defines a video or movie", "video", "play", "embed");
@@ -57,13 +50,11 @@ question4,
 question5,
 question6,
 question7,
-question8,
 question9,
 question10,
 question11,
 question12,
 question13,
-question14,
 question15,
 question16,
 question17,
@@ -88,15 +79,10 @@ question35,
 question36,
 question37,
 question38,
-question39,
 question40,
 question41,
-question42,
 question43,
-question44,
-question45,
 question46,
-question47,
 question48,
 question49,
 question50

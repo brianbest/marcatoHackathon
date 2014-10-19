@@ -1,8 +1,5 @@
 //Global Vars
 //===================================================
-	var question = '1+1= ?';
-	var answer = '2';
-
 	//function Vars
 	//===================================================
 	var final_transcript ='';//for speech
@@ -44,8 +41,10 @@ function makeQuestion(questions, rights, wrong1, wrong2){
 //function for picking a random question
 function pickQuestion(){
 	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
-	askQuestion(selectedQuestion);
+	//askQuestion(selectedQuestion);
 }
+
+pickQuestion();
 
 function shuffleArray(array) {
 		for (var i = array.length - 1; i > 0; i--) {
@@ -57,6 +56,12 @@ function shuffleArray(array) {
 		return array;
 }
 
+//Place question
+//===================================================
+$('.questionbox').find('p').html(selectedQuestion.question);
+
+
+
 //Sub-Functions
 //===================================================
 function startButton(event) {
@@ -67,7 +72,7 @@ function startButton(event) {
 }
 
 function playQuestion(){
-	var msg = new SpeechSynthesisUtterance(question);
+	var msg = new SpeechSynthesisUtterance(selectedQuestion.question);
 		window.speechSynthesis.speak(msg);
 }
 
@@ -76,46 +81,11 @@ function upgrade(){
 }
 //===================================================
 
-
-
-//Pick a question
-//===================================================
-
-var question = document.createElement("P");
-var content = document.createTextNode(selectedQuestion.question);
-question.appendChild(content);
-
-var postQuestion = document.getElementById("questionArea");
-postQuestion.appendChild(question);
-
-var answerOptions = [selectedQuestion.rightAnswer,
-						selectedQuestion.wrongAnswer1,
-						selectedQuestion.wrongAnswer2];
-
-var answerOptionsRandom = shuffleArray(answerOptions);
-
-for (i = 0; i < answerOptionsRandom.length; i++) {
-	if (answerOptionsRandom[i] === selectedQuestion.rightAnswer) {
-		var rightAnswer = document.createTextNode(answerOptionsRandom[i]);
-		var computeAnswer = answerOptionsRandom[i];
-		var postRightAnswer = document.getElementById("answer" + (i + 1));
-		postRightAnswer.appendChild(rightAnswer);
-	}
-
-	else {
-		var wrongAnswer = document.createTextNode(answerOptionsRandom[i]);
-		var postWrongAnswer = document.getElementById("answer" + (i + 1));
-		postWrongAnswer.appendChild(wrongAnswer);
-	}
-}
-
-
-
-
+speechQuestion(selectedQuestion.rightAnswer);
 
 //Carols text
 //=========================================================
-function textQuestion(){
+function textQuestion(a){
 
 	$('.textQuestion').removeClass('hide');
 
@@ -134,16 +104,17 @@ function textQuestion(){
 
 //Brian's speech to text
 //=========================================================
-function speechQuestion(q, a){
+function speechQuestion(a){
 	$('.speechQuestion').removeClass('hide');
-	var asked_question = q;
-	var asked_answer = a;
+	//var asked_question = q;
+	var asked_answer = a.toLowerCase();
 
 	//The Magic area!
 	//===================================================
 		recognition.continuous = false;
 		recognition.onresult = function(event) {
 			transcript = event.results[0][0].transcript;
+			transcript = transcript.toLowerCase();
 			document.getElementById('capText').innerHTML = transcript;
 		};
 		recognition.onend = function() {
@@ -168,9 +139,33 @@ function speechQuestion(q, a){
 
 //Jake's code
 //===================================================
-function askQuestion() {
+function dragQuestion() {
 	$('.dragQuestion').removeClass('hide');
+
+	$('#answerbox').html('drag your answer here');
+
 	console.log("click works");
+
+	var answerOptions = [selectedQuestion.rightAnswer,
+							selectedQuestion.wrongAnswer1,
+							selectedQuestion.wrongAnswer2];
+
+	var answerOptionsRandom = shuffleArray(answerOptions);
+
+	for (i = 0; i < answerOptionsRandom.length; i++) {
+		if (answerOptionsRandom[i] === selectedQuestion.rightAnswer) {
+			var rightAnswer = document.createTextNode(answerOptionsRandom[i]);
+			var computeAnswer = answerOptionsRandom[i];
+			var postRightAnswer = document.getElementById("answer" + (i + 1));
+			postRightAnswer.appendChild(rightAnswer);
+		}
+
+		else {
+			var wrongAnswer = document.createTextNode(answerOptionsRandom[i]);
+			var postWrongAnswer = document.getElementById("answer" + (i + 1));
+			postWrongAnswer.appendChild(wrongAnswer);
+		}
+	}
 
 	$('#answer1').draggable();
 	$('#answer2').draggable();

@@ -301,3 +301,10 @@ function endRound(){
 	$('#endVisual').html(vAff + '%');
 	$('#endKinetic').html(kAff + '%');
 }
+function startNewRound(){
+	total_overall = 0;
+	total_asked = 0;
+	$('.endRound').addClass('hide');
+	$('.forceHeight').removeClass('hide');
+	getNewQuestion();
+}

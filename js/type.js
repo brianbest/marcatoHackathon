@@ -90,15 +90,18 @@ function runTest() {
 		 	switch (weight[2].name) {
 
 		 		case "skillK":
-		 			console.log("It's K");
-		 			break;
+						console.log("It's K");
+					dragQuestion(selectedQuestion.rightAnswer);
+						break;
 
 				case "skillV":
 					console.log("It's V");
+					speechQuestion(selectedQuestion.rightAnswer);
 					break;
 
 				case "skillA":
 					console.log("It's A");
+					textQuestion(selectedQuestion.rightAnswer);
 					break;
 		 	}
 		 	return;
@@ -111,18 +114,23 @@ function runTest() {
 		 	switch (weight[1].name) {
 
 		 		case "skillK":
-		 			console.log("It's K");
-		 			break;
+						console.log("It's K");
+					dragQuestion(selectedQuestion.rightAnswer);
+						break;
 
 				case "skillV":
 					console.log("It's V");
+					speechQuestion(selectedQuestion.rightAnswer);
 					break;
 
 				case "skillA":
 					console.log("It's A");
+					textQuestion(selectedQuestion.rightAnswer);
 					break;
 		 	}
 		 	return;
 		 }
 	}
 }
+
+runTest();

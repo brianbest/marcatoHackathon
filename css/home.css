@@ -1,17 +1,43 @@
 
-
-form{
-	padding-top: 40%;
-	position: relative;
-	vertical-align: middle;
-	background-color: rgba(255, 114, 96, 0.5);
-
+.openingTitle{
+	padding-top: 15%;
+	padding-bottom: .5%;
 }
 
-.openingTitle{
-	padding-top: 20%;
+h1{
+	font-size: 72px;
+	font-family: Helvetica;
 	text-align: center;
 	font-weight: bold;
-	color:;
+	color: white;
+}
+h3{
+	font-family: Helvetica;
+	color: white;
+	text-align: center;
+	padding-bottom: 4%;
+}
+form{
+	padding-top: 30%;
+	padding-bottom: 30%;
+	padding-left: 40%;
+	vertical-align: middle;
+	background-color: black;
+}
+.login{
+	position: center;
+	border: 3px solid #129793;
+	background-color: #9BD7D5;
+}
+.register{
+	font-size: 32px;
+	font-weight: bold;
+	font: helvetica;
+	height: 60px;
+	font:underline;
+	position: center;
+}
 
+button{
+	background-color: #129793;
 }

@@ -1,8 +1,5 @@
 //Global Vars
 //===================================================
-	var question = '1+1= ?';
-	var answer = '2';
-
 	//function Vars
 	//===================================================
 	var final_transcript ='';//for speech
@@ -15,28 +12,85 @@
 		var recognition = new webkitSpeechRecognition();
 	}
 
-	//For Jake
-	//-------------------------------------------------
-
-	//default question objects
-	var question1 = new question("What color is the sky?", "Blue", "Hex", "Dunno");
-	var question2 = new question("What color is the ocean?", "Blue", "Cloth", "Knife");
-	var question3 = new question("What time is it?", "Now", "Never", "Before");
-
-	//array of questions
-	var questionBin = [question1, question2, question3];
-	var selectedQuestion = "";
 
 //===================================================
 
 
 
 
+//Make Questions
+//===================================================
+//function for creating question objects
+function makeQuestion(questions, rights, wrong1, wrong2){
+		// var thisQuestion = new object();
+		this.question = questions;
+		this.rightAnswer = rights;
+		this.wrongAnswer1 = wrong1;
+		this.wrongAnswer2 = wrong2;
+		// return thisQuestion;
+}
+	//default question objects
+	var question1 = new makeQuestion("What color is the sky?", "Blue", "Hex", "Dunno");
+	var question2 = new makeQuestion("What color is the ocean?", "Blue", "Cloth", "Knife");
+	var question3 = new makeQuestion("What time is it?", "Now", "Never", "Before");
 
+	//array of questions
+	var questionBin = [question1, question2, question3];
+	var selectedQuestion = "";
+
+//function for picking a random question
+function pickQuestion(){
+	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
+	//askQuestion(selectedQuestion);
+}
+
+pickQuestion();
+
+function shuffleArray(array) {
+		for (var i = array.length - 1; i > 0; i--) {
+				var j = Math.floor(Math.random() * (i + 1));
+				var temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+		}
+		return array;
+}
+
+//Place question
+//===================================================
+$('.questionbox').find('p').html(selectedQuestion.question);
+
+
+
+//Sub-Functions
+//===================================================
+function startButton(event) {
+
+	final_transcript = '';
+	recognition.lang = "en-US";//select_dialect.value;
+	recognition.start();
+}
+
+function playQuestion(){
+	var msg = new SpeechSynthesisUtterance(selectedQuestion.question);
+		window.speechSynthesis.speak(msg);
+}
+
+function upgrade(){
+	alert('Why do you hate me?');
+}
+//===================================================
+
+var i = ['',textQuestion,speechQuestion,dragQuestion];
+
+i[](selectedQuestion.rightAnswer);
 
 //Carols text
 //=========================================================
-function textQuestion(){
+function textQuestion(a){
+
+	$('.textQuestion').removeClass('hide');
+
 	$('form').submit(function(){
 		event.preventDefault();
 		var answer = document.getElementById("txtans").value;
@@ -52,16 +106,17 @@ function textQuestion(){
 
 //Brian's speech to text
 //=========================================================
-function speechQuestion(q, a){
-
-	var asked_question = q;
-	var asked_answer = a;
+function speechQuestion(a){
+	$('.speechQuestion').removeClass('hide');
+	//var asked_question = q;
+	var asked_answer = a.toLowerCase();
 
 	//The Magic area!
 	//===================================================
 		recognition.continuous = false;
 		recognition.onresult = function(event) {
 			transcript = event.results[0][0].transcript;
+			transcript = transcript.toLowerCase();
 			document.getElementById('capText').innerHTML = transcript;
 		};
 		recognition.onend = function() {
@@ -86,14 +141,12 @@ function speechQuestion(q, a){
 
 //Jake's code
 //===================================================
-function askQuestion() {
-	console.log("click works");
-	var question = document.createElement("P");
-	var content = document.createTextNode(selectedQuestion.question);
-	question.appendChild(content);
+function dragQuestion(a) {
+	$('.dragQuestion').removeClass('hide');
 
-	var postQuestion = document.getElementById("questionArea");
-	postQuestion.appendChild(question);
+	$('#answerbox').html('drag your answer here');
+
+	console.log("click works");
 
 	var answerOptions = [selectedQuestion.rightAnswer,
 							selectedQuestion.wrongAnswer1,
@@ -135,55 +188,4 @@ function askQuestion() {
 			}
 	});
 }
-//===================================================
-
-
-
-//Sub-Functions
-//===================================================
-function startButton(event) {
-
-	final_transcript = '';
-	recognition.lang = "en-US";//select_dialect.value;
-	recognition.start();
-}
-
-function playQuestion(){
-	var msg = new SpeechSynthesisUtterance(question);
-		window.speechSynthesis.speak(msg);
-}
-
-function upgrade(){
-	alert('Why do you hate me?');
-}
-
-
-//Jake
-//--------------------------------------------------
-//function for creating question objects
-function question(question, right, wrong1, wrong2) {
-		this.question = question;
-		this.rightAnswer = right;
-		this.wrongAnswer1 = wrong1;
-		this.wrongAnswer2 = wrong2;
-}
-
-//function for picking a random question
-function pickQuestion(){
-	selectedQuestion = questionBin[Math.floor(Math.random() * questionBin.length)];
-	askQuestion(selectedQuestion);
-}
-
-function shuffleArray(array) {
-		for (var i = array.length - 1; i > 0; i--) {
-				var j = Math.floor(Math.random() * (i + 1));
-				var temp = array[i];
-				array[i] = array[j];
-				array[j] = temp;
-		}
-		return array;
-}
-
-
-
 //===================================================

@@ -4,11 +4,11 @@ var http = require('http').Server(app);
 //var io = require('socket.io')(http);
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/proof.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
-// app.use("/styles", express.static(__dirname + '/styles'));
- app.use("/script.js", express.static(__dirname + '/script.js'));
+ app.use("/css", express.static(__dirname + '/css'));
+ app.use("/js", express.static(__dirname + '/js'));
 
 
 // app.use("/mic-animate.gif", express.static(__dirname + '/mic-animate.gif'));
